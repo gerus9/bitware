@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Bitware</string>
+
+    <string name="name">Nombre</string>
+    <string name="age">Edad</string>
+    <string name="firstName">Apellido paterno</string>
+    <string name="secondName">Apellido materno</string>
+    <string name="gender">Género</string>
+    <string name="weight">Peso</string>
+    <string name="height">Altura</string>
+    <string name="submit">Enviar</string>
 </resources>
