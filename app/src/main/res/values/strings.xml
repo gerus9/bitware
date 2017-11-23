@@ -1,12 +1,30 @@
 <resources>
-    <string name="app_name">Bitware</string>
+    <string name="app_name">E-bitware</string>
 
     <string name="name">Nombre</string>
     <string name="age">Edad</string>
     <string name="firstName">Apellido paterno</string>
     <string name="secondName">Apellido materno</string>
-    <string name="gender">Género</string>
-    <string name="weight">Peso</string>
+    <string name="gender">Género (M / F)</string>
+    <string name="weight">Peso (kg)</string>
     <string name="height">Altura</string>
     <string name="submit">Enviar</string>
+    <string name="clients">Clientes</string>
+    <string name="loading">Espera unos momentos</string>
+
+    <!-- Fragments -->
+    <string name="fragment_persons">Personas</string>
+    <string name="fragment_requests">Peticiones</string>
+
+    <!-- Request -->
+    <string name="request_get">Petición GET</string>
+    <string name="request_post">Petición POST</string>
+    <string name="request_put">Petición PUT</string>
+
+    <!-- Error -->
+    <string name="error_network">Error de comunicación</string>
+    <string name="show_console">Vea la consola</string>
+    <string name="error_empty">No puede estar vacío</string>
+    <string name="employess">Número de clientes %d</string>
+
 </resources>

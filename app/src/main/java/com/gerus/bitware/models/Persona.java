@@ -1,36 +1,43 @@
 package com.gerus.bitware.models;
 
+import android.support.design.widget.TextInputLayout;
+import android.util.Log;
+
+import static com.gerus.bitware.utils.Utils.ABECEDARIO;
+
 /**
- * Created by gerus-mac on 21/11/17.
+ * Created by gerus-mac on 22/01/17.
  */
 
 public class Persona {
 
-    public static final char GENERO_MASCULINO = 'M';
-    public static final char GENERO_FEMENINO = 'F';
+    private static final char GENERO_MASCULINO = 'M';
+    private static final char GENERO_FEMENINO = 'F';
 
-    public static final int PESO_DEBAJO = -1;
-    public static final int PESO_NORMAL = 0;
-    public static final int PESO_SOBREPESO = 1;
+    private static final int PESO_DEBAJO = -1;
+    private static final int PESO_NORMAL = 0;
+    private static final int PESO_SOBREPESO = 1;
 
-    public static final int PESO_MIN_MASCULINO = 20;
-    public static final int PESO_MAX_MASCULINO = 25;
-    public static final int PESO_MIN_FEMENINO = 19;
-    public static final int PESO_MAX_FEMENINO = 24;
+    private static final int PESO_MIN_MASCULINO = 20;
+    private static final int PESO_MAX_MASCULINO = 25;
+    private static final int PESO_MIN_FEMENINO = 19;
+    private static final int PESO_MAX_FEMENINO = 24;
 
     private static final byte MAYOR_EDAD = 18;
+
+    private static final byte MAX_NSS = 8;
 
     private String nombre = "";
     private String apPaterno = "";
     private String apMaterno = "";
     private int edad = 0;
-    private int nss;
+    private String nss;
     private char genero = GENERO_MASCULINO;
     private float peso = 0;
     private float altura = 0;
 
     public Persona() {
-
+        generaNSS();
     }
 
     public Persona(String nombre, String apPaterno, String apMaterno, int edad, char genero) {
@@ -39,17 +46,18 @@ public class Persona {
         this.apMaterno = apMaterno;
         this.edad = edad;
         this.genero = genero;
+        generaNSS();
     }
 
-    public Persona(String nombre, String apPaterno, String apMaterno, int edad, int nss, char genero, float peso, float altura) {
+    public Persona(String nombre, String apPaterno, String apMaterno, int edad, char genero, float peso, float altura) {
         this.nombre = nombre;
         this.apPaterno = apPaterno;
         this.apMaterno = apMaterno;
         this.edad = edad;
-        this.nss = nss;
         this.genero = genero;
         this.peso = peso;
         this.altura = altura;
+        generaNSS();
     }
 
     public String getNombre() {
@@ -84,7 +92,7 @@ public class Persona {
         this.edad = edad;
     }
 
-    public int getNss() {
+    public String getNss() {
         return nss;
     }
 
@@ -122,7 +130,7 @@ public class Persona {
     }
 
     private int obtenerPesoIdeal(int min, int max, float pesoIdeal) {
-        return (pesoIdeal < min) ? PESO_DEBAJO : (pesoIdeal < max ? PESO_SOBREPESO : PESO_NORMAL);
+        return (pesoIdeal < min) ? PESO_DEBAJO : (pesoIdeal > max ? PESO_SOBREPESO : PESO_NORMAL);
     }
 
     public boolean esMayorEdad() {
@@ -131,6 +139,15 @@ public class Persona {
 
     private boolean comprobarSexo(char genero) {
         return (genero == GENERO_MASCULINO || genero == GENERO_FEMENINO);
+    }
+
+    private void generaNSS() {
+        StringBuilder voNss = new StringBuilder();
+        for (int i = 0; i < MAX_NSS; i++) {
+            int numRandon = (int) Math.round(Math.random() * 36 ) ;
+            voNss.append(ABECEDARIO[numRandon]);
+        }
+        this.nss = voNss.toString();
     }
 
     @Override
@@ -143,6 +160,7 @@ public class Persona {
                 ", nss=" + nss +
                 ", genero=" + genero +
                 ", peso=" + peso +
+                ", altura=" + altura +
                 ", altura=" + altura +
                 '}';
     }

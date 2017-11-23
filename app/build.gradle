@@ -5,16 +5,23 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.gerus.bitware"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField "String", "URL", "\" http://187.188.122.85:8091\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            applicationIdSuffix ".dev"
+            buildConfigField "String", "URL", "\" http://187.188.122.85:8091\""
         }
     }
 }
@@ -28,6 +35,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
+    //Dialog Progress
+    compile 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'

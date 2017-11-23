@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="numberlength">3</integer>
+    <integer name="length_age">3</integer>
+    <integer name="length_gender">1</integer>
+    <integer name="length_weight">3</integer>
+    <integer name="length_height">5</integer>
 </resources>

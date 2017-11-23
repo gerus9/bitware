@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_persons"
+        android:enabled="true"
+        android:icon="@drawable/vc_client"
+        android:title="@string/fragment_persons"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_requests"
+        android:enabled="true"
+        android:icon="@drawable/vc_phone"
+        android:title="@string/fragment_requests"
+        app:showAsAction="ifRoom" />
+</menu>

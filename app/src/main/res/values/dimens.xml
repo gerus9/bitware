@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="padding_5">5dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
+
+    <dimen name="dialog_icon">32dp</dimen>
+
     <dimen name="padding_general">15dp</dimen>
     <dimen name="margin_textEdit">10dp</dimen>
+    <dimen name="dialog_thickness">3dp</dimen>
 </resources>
